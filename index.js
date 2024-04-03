@@ -2,7 +2,9 @@
 
 require('dotenv').config();
 
-const app = require('./src/server.js');
+
+// start the server here!!
+const app = require('./src/server_start.js');
 const PORT = process.env.PORT;
 
 app.listen(PORT, () =>{
