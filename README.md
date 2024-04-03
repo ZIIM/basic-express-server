@@ -11,7 +11,7 @@ This repository contains a backend Express server.
 
 To run this application on your machine, follow these steps:
 
-- **Placeholder**: 
+- **Placeholder**:
 - **Install Dependencies**: Run `npm install` to install the required dependencies.
 - **Set Environment Variables**: Create a `.env` file in the root directory and add the necessary environment variables.
 - **Start Server**: Run `npm start` to start the Express server.
