@@ -9,7 +9,8 @@ const app = express();
 app.use(cors());
 
 app.get('/person', , (req, res, next) =>{
-    console.log('message from validator', req.);
+    console.log('message from validator', ,req.);
+    res.send('string goes here ');
 })
 
 app.use(serverError);
