@@ -2,18 +2,26 @@
 
 const express = require('express');
 const cors = require('cors');
-const notFound = require('./error-handlers/404.js');
-const serverError = require('./error-handlers/500.js');
-
 const app = express();
+
 app.use(cors());
 
-app.get('/person', , (req, res, next) =>{
-    console.log('message from validator', ,req.);
-    res.send('string goes here ');
-})
+const logger = require('./middelware/logger');
+const validator = require('./middelware/validator');
+const handlePerson = require('./handlePerson');
+const errorHandler = require('./error-handlers/errorHandler');
 
-app.use(serverError);
-app.use(notFound);
+app.use(logger); // the log mid
+app.use(validator); // validator mid
 
-module.exports = app;
+app.get('/person', handlePerson)
+app.use(errorHandler);
+
+module.exports = {
+    app,
+    start: (port) => {
+      app.listen(port, () => {
+        console.log('Server is running!' + port);
+      });
+    }
+  };
